@@ -21,9 +21,9 @@ function App() {
   }, [inputValue]);
 
   return (
-    <div className="bg-olive-400 h-screen w-screen pt-20">
+    <div className="bg-olive-400 h-screen w-screen pt-2">
       <div
-        className="grid grid-cols-4 grid-rows-5 gap-5 p-6 items-center justify-items-center"
+        className="grid grid-cols-4 grid-rows-6 gap-5 p-6 items-center justify-items-center"
         style={wrapperStyle}
       >
         <input
@@ -38,7 +38,7 @@ function App() {
               setInputValue(evaluateExpression(inputValue));
             }
           }}
-          maxLength={25}
+          maxLength={24}
         />
         <button
           onClick={() => setInputValue(inputValue + "7")}
@@ -107,10 +107,10 @@ function App() {
           0
         </div>
         <div
-          onClick={() => setInputValue(evaluateExpression(inputValue))}
-          className={`${darkBlueButtonClassNames} col-start-3 row-start-5`}
+          onClick={() => setInputValue(inputValue + ",")}
+          className={`${buttonClassNames} col-start-3 row-start-5`}
         >
-          <img src="./public/icons/IcoEqual.svg" draggable="false" />
+          <img src="./public/icons/IcoComma.svg" draggable="false" />
         </div>
         <div
           onClick={() => setInputValue(inputValue + "+")}
@@ -139,6 +139,41 @@ function App() {
             draggable="false"
             className="rotate-45 scale-125"
           />
+        </div>
+        {/* 6TH ROW */}
+        <div
+          onClick={() => {
+            setInputValue(history[history.length - 1] || "");
+            setHistory(history.slice(0, -1));
+          }}
+          className={`${yellowButtonClassNames} col-start-1 row-start-6 text-[1.5rem]`}
+        >
+          prev
+        </div>
+        <div
+          onClick={() => setInputValue(inputValue + "(")}
+          className={`${blueButtonClassNames} col-start-2 row-start-6`}
+        >
+          <img src="./public/icons/IcoScobe.svg" draggable="false" />
+        </div>
+        <div
+          onClick={() => setInputValue(inputValue + ")")}
+          className={`${blueButtonClassNames} col-start-3 row-start-6`}
+        >
+          <img
+            src="./public/icons/IcoScobe.svg"
+            draggable="false"
+            className="rotate-180"
+          />
+        </div>
+        <div
+          onClick={() => {
+            setInputValue(evaluateExpression(inputValue));
+            setHistory([...history, inputValue]);
+          }}
+          className={`${darkBlueButtonClassNames} col-start-4 row-start-6`}
+        >
+          <img src="./public/icons/IcoEqual.svg" draggable="false" />
         </div>
       </div>
     </div>

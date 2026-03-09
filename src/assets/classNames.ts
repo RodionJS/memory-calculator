@@ -1,5 +1,5 @@
 const baseButtonClassNames: string =
-  "select-none rounded-full cursor-pointer text-5xl flex items-center justify-center w-full h-full transition-all duration-200 ease-in-out border-2 hover:shadow-none focus:outline-none opacity-70 hover:opacity-100 active:scale-95";
+  "aspect-square select-none rounded-full cursor-pointer text-5xl flex items-center justify-center w-full h-full transition-all duration-200 ease-in-out border-2 hover:shadow-none focus:outline-none opacity-70 hover:opacity-100 active:scale-95";
 
 export const buttonClassNames: string = `${baseButtonClassNames} 
   bg-[#e0e0e0] text-[#4d4d4d] 

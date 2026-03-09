@@ -1,6 +1,6 @@
 export const wrapperStyle: React.CSSProperties = {
-  width: 800,
-  height: 1000,
+  width: "min(800px, 92vw, 68vh)",
+  aspectRatio: "7 / 10",
   borderRadius: 50,
   background: "#e0e0e099",
   boxShadow: "20px 20px 60px #bebebe, -20px -20px 60px #ffffff50",
